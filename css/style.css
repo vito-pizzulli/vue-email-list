@@ -34,15 +34,20 @@ div.screen {
     overflow: auto;
 }
 
-div.screen h1 {
+div.screen h1,
+div.screen span {
     text-align: center;
+    display: inline-block;
 }
 
 div.screen h1,
 div.screen span,
-div.screen input,
-div.screen button {
+div.screen input {
     margin: 1rem;
+}
+
+div.screen button {
+    margin: .5rem;
 }
 
 div.screen input {
