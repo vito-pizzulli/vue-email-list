@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Email List Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts Press Start 2P -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -15,17 +22,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
 
     <div id="app">
-        <h1>Vue Email List Generator</h1>
-        <span>Insert the number of the email addresses you want to generate:</span>
-        <input type="text" v-model="mailNumberInput">
-        <button @click="getMailList()" v-if="mailNumberInput <= 30 && mailNumberInput > 0">Generate</button>
-        <button @click="resetMailList()" v-if="mailList.length > 0">Reset</button>
-        <span v-if="mailNumberInput > 30">You can generate a maximum of 30 emails at a time.</span>
-        <ul v-if="mailList.length == mailNumber">
-            <li v-for="(mail, index) in mailList" :key="index">
-                {{ mail }}
-            </li>
-        </ul>
+        <div class="screen">
+            <h1>Vue Email List Generator</h1>
+            <span>Insert the number of the email addresses you want to generate</span><br>
+            <input type="text" v-model="mailNumberInput" @keyup.enter="getMailList()">
+            <button @click="getMailList()" v-if="mailNumberInput <= 30 && mailNumberInput > 0">Generate</button>
+            <button @click="resetMailList()" v-if="mailList.length > 0">Reset</button><br>
+            <span v-if="mailNumberInput > 30">You can generate a maximum of 30 emails at a time.</span>
+            <ul v-if="mailList.length == mailNumber">
+                <li v-for="(mail, index) in mailList" :key="index">
+                    {{ mail }}
+                </li>
+            </ul>
+            </div>
     </div>
 
     <script src="js/myscript.js"></script>
