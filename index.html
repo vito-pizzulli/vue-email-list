@@ -15,7 +15,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
 
     <div id="app">
-        <h1>{{ mail }}</h1>
+        <h1>Vue Email List</h1>
+        <ul>
+            <li v-for="mail in mailList">
+                {{ mail }}
+            </li>
+        </ul>
     </div>
 
     <script src="js/myscript.js"></script>
