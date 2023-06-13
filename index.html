@@ -25,10 +25,11 @@
         <div class="screen">
             <h1>Vue Email List Generator</h1>
             <span>Insert the number of the email addresses you want to generate</span><br>
-            <input type="text" v-model="mailNumberInput" @keyup.enter="getMailList()">
+            <input type="text" v-model="mailNumberInput" @keyup.enter="getMailList()" maxlength="2">
             <button @click="getMailList()" v-if="mailNumberInput <= 30 && mailNumberInput > 0">Generate</button>
             <button @click="resetMailList()" v-if="mailList.length > 0">Reset</button><br>
             <span v-if="mailNumberInput > 30">You can generate a maximum of 30 emails at a time.</span>
+            <span v-if="mailList.length > 0 && mailList.length < mailNumber">Loading...</span>
             <ul v-if="mailList.length == mailNumber">
                 <li v-for="(mail, index) in mailList" :key="index">
                     {{ mail }}
