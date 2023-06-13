@@ -19,6 +19,9 @@ createApp ({
                     this.mailList.push(result.response);
                 });
             }
+        },
+        resetMailList() {
+            this.mailList = [];
         }
     }
 }) .mount('#app');

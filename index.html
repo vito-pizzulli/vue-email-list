@@ -19,6 +19,7 @@
         <span>Insert the number of the email addresses you want to generate:</span>
         <input type="text" v-model="mailNumberInput">
         <button @click="getMailList()" v-if="mailNumberInput <= 30 && mailNumberInput > 0">Generate</button>
+        <button @click="resetMailList()" v-if="mailList.length > 0">Reset</button>
         <span v-if="mailNumberInput > 30">You can generate a maximum of 30 emails at a time.</span>
         <ul v-if="mailList.length == mailNumber">
             <li v-for="(mail, index) in mailList" :key="index">
