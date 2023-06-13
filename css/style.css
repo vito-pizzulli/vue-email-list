@@ -1,0 +1,71 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: #9bbc0f;
+    font-family: 'Press Start 2P', cursive;
+    font-size: .9rem;
+}
+
+#app {
+    background-image: url(../img/retro_pc.gif);
+    width: 100vw;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+div.screen {
+    background-color: #0f380f;
+    width: 25%;
+    height: 43.7%;
+    top: 16.7%;
+    left: 37.5%;
+    position: absolute;
+    padding: 1rem;
+    overflow: auto;
+}
+
+div.screen h1 {
+    text-align: center;
+}
+
+div.screen h1,
+div.screen span,
+div.screen input,
+div.screen button {
+    margin: 1rem;
+}
+
+div.screen input {
+    width: 15%;
+    text-align: center;
+    background-color: #9bbc0f;
+    color: #0f380f;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    padding: .5rem;
+    font-size: 1.2rem;
+}
+
+div.screen button {
+    width: fit-content;
+    background-color: #9bbc0f;
+    color: #0f380f;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    padding: .5rem;
+    font-size: 1.2rem;
+}
+
+div.screen ul {
+    list-style: none;
+}
