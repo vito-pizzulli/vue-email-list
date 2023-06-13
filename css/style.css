@@ -50,27 +50,79 @@ div.screen button {
     margin: .5rem;
 }
 
-div.screen input {
-    width: 15%;
-    text-align: center;
+div.screen input,
+div.screen button {
     background-color: #9bbc0f;
     color: #0f380f;
     border: none;
     font-family: 'Press Start 2P', cursive;
     padding: .5rem;
     font-size: 1.2rem;
+}
+
+div.screen input {
+    width: 15%;
+    text-align: center;
 }
 
 div.screen button {
     width: fit-content;
-    background-color: #9bbc0f;
-    color: #0f380f;
-    border: none;
-    font-family: 'Press Start 2P', cursive;
-    padding: .5rem;
-    font-size: 1.2rem;
 }
 
 div.screen ul {
     list-style: none;
+}
+
+div.screen ul > li {
+    margin: .5rem 0;
+}
+
+
+/* Responsive Layouts */
+
+/* XS Layout (from 0px to 575px */
+@media screen and (max-width: 575px) {
+    body {
+        font-size: .3rem;
+    }
+
+    div.screen {
+        width: 40.2%;
+        height: 17.9%;
+        top: 36.4%;
+        left: 30%;
+        padding: .5rem;
+    }
+
+    div.screen input {
+        width: 20%;
+    }
+
+    div.screen h1,
+    div.screen span,
+    div.screen input {
+        margin: .5rem;
+}
+
+    div.screen input,
+    div.screen button {
+        padding: .5rem;
+        font-size: .4rem;
+        margin: .1rem;
+        margin-bottom: .5rem;
+    }
+}
+
+/* 2K Layout (from 2560px to 3840px */
+@media screen and (min-width: 2560px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+/* 4K Layout (from 3840px to higher resolutions */
+@media screen and (min-width: 3840px) {
+    html {
+        font-size: 30px;
+    }
 }
