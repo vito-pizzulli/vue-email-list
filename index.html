@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Email List</title>
+    <title>Vue Email List Generator</title>
 </head>
 <body>
 
@@ -15,9 +15,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
 
     <div id="app">
-        <h1>Vue Email List</h1>
-        <ul v-if="mailList.length === 10">
-            <li v-for="mail in mailList">
+        <h1>Vue Email List Generator</h1>
+        <span>Insert the number of email addresses to generate:</span>
+        <input type="text" v-model="mailNumberInput">
+        <button @click="getMailList()" v-if="mailNumberInput <= 30">Generate</button>
+        <span v-if="mailNumberInput > 30">You can generate a maximum of 30 emails at a time.</span>
+        <ul v-if="mailList.length == mailNumber">
+            <li v-for="(mail, index) in mailList" :key="index">
                 {{ mail }}
             </li>
         </ul>
