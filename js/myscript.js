@@ -5,11 +5,14 @@ createApp ({
         return {
             mailList: [],
             mailNumberInput: '',
-            mailNumber: ''
+            mailNumber: '',
+            clickAudio: new Audio('audio/8bit.mp3'),
         }
     },
     methods: {
         getMailList() {
+            this.clickAudio.currentTime = 0;
+            this.clickAudio.play();
             this.mailNumber = this.mailNumberInput;
             this.mailList = [];
             for (i = 0; i < this.mailNumber; i++) {
@@ -21,6 +24,8 @@ createApp ({
             }
         },
         resetMailList() {
+            this.clickAudio.currentTime = 0;
+            this.clickAudio.play();
             this.mailList = [];
         }
     }
